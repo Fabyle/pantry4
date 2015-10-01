@@ -9,12 +9,19 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriBuilder;
 
 import org.glassfish.jersey.client.ClientConfig;
+import org.glassfish.jersey.jackson.JacksonFeature;
 
 public class TodoTest {
 
   public static void main(String[] args) {
-    ClientConfig config = new ClientConfig();
+    //ClientConfig config = new ClientConfig();
+    
+    ClientConfig config = new ClientConfig().register(JacksonFeature.class);
+    
+    
     Client client = ClientBuilder.newClient(config);
+    
+    
 
     WebTarget target = client.target(getBaseURI());
     // Get XML
@@ -33,6 +40,10 @@ public class TodoTest {
     
     System.out.println(xmlResponse);
     System.out.println(xmlAppResponse);
+    
+  System.out.println(target.path("rest").path("todo").request()
+  .accept(MediaType.APPLICATION_JSON).get(String.class));
+    
   }
 
   private static URI getBaseURI() {
