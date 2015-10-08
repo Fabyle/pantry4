@@ -8,7 +8,6 @@ import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.tutorial.addressbook.backend.Contact;
 import com.vaadin.tutorial.addressbook.backend.Tache;
 import com.vaadin.tutorial.addressbook.backend.TacheService;
 import com.vaadin.ui.Button;

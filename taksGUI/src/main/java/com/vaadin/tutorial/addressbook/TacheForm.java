@@ -27,6 +27,8 @@ public class TacheForm extends FormLayout {
     Button cancel = new Button("Cancel", this::cancel);
     TextField label = new TextField("Label");
     DateField datePrevu = new DateField("date prévue");
+    
+   
 
     Tache tache;
 
@@ -45,6 +47,8 @@ public class TacheForm extends FormLayout {
          * With Vaadin built-in styles you can highlight the primary save button
          * and give it a keyboard shortcut for a better UX.
          */
+    	 this.addStyleName("desktop");
+    	
         save.setStyleName(ValoTheme.BUTTON_PRIMARY);
         save.setClickShortcut(ShortcutAction.KeyCode.ENTER);
         setVisible(false);

@@ -52,7 +52,7 @@ public class TacheService {
 					arrayList.add(tache.clone());
 				}
 			} catch (CloneNotSupportedException ex) {
-				Logger.getLogger(ContactService.class.getName()).log(Level.SEVERE, null, ex);
+				Logger.getLogger(TacheService.class.getName()).log(Level.SEVERE, null, ex);
 			}
 		}
 		Collections.sort(arrayList, new Comparator<Tache>() {
@@ -85,7 +85,7 @@ public class TacheService {
 	 * Supprime un élément
 	 * @param value
 	 */
-	public synchronized void delete(Contact value) {
+	public synchronized void delete(Tache value) {
 		taches.remove(value.getId());
 	}
 
