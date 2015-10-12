@@ -9,6 +9,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import fr.fabien.taskmanagement.database.business.EtatTache;
+import fr.fabien.taskmanagement.database.business.Tache;
+import fr.fabien.taskmanagement.database.services.ServiceJointure;
+
 /**
  * Hello world!
  *
@@ -25,15 +29,27 @@ public class App
         
        
 		try {
-			List<Tache> list = null;
+			List<Tache> listTache = null;
+			List<EtatTache> listEtatTache = null;
 			
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 			SqlSession session = sqlSessionFactory.openSession();
-			list = session.selectList("Tache.selectAll");
-			for (Tache tache : list) {
+			listTache = session.selectList("Tache.selectAll");
+			
+			
+			listEtatTache = session.selectList("EtatTache.selectAll");
+			for (EtatTache etatTache : listEtatTache) {
+				System.out.println(etatTache);
+			}
+			
+			ServiceJointure servicejointure = ServiceJointure.getInstance();
+			servicejointure.joindreTacheAvecEtatTache(listTache, listEtatTache);
+			
+			for (Tache tache : listTache) {
 				System.out.println(tache);
 			}
+			
 			
 		} catch (IOException ex) {
 			// TODO bloc catch squelette auto-généré

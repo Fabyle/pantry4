@@ -1,4 +1,4 @@
-package fr.fabien.taskmanagement.database;
+package fr.fabien.taskmanagement.database.business;
 
 /**
  * TODO ajouter un commentaire
@@ -12,7 +12,9 @@ public class Tache {
 	
 	String idTache;
 	String label;
-	String etat;
+	String _basicEtat;
+	EtatTache etatTache;
+	
 	
 	public String getIdTache() {
 		return idTache;
@@ -26,11 +28,17 @@ public class Tache {
 	public void setLabel(String label) {
 		this.label = label;
 	}
-	public String getEtat() {
-		return etat;
+	public String get_BasicEtat() {
+		return _basicEtat;
 	}
-	public void setEtat(String etat) {
-		this.etat = etat;
+	public void set_BasicEtat(String etat) {
+		this._basicEtat = etat;
+	}
+	public EtatTache getEtatTache() {
+		return etatTache;
+	}
+	public void setEtatTache(EtatTache etatTache) {
+		this.etatTache = etatTache;
 	}
 	@Override
 	public String toString() {
@@ -39,11 +47,15 @@ public class Tache {
 		builder.append(idTache);
 		builder.append(", label=");
 		builder.append(label);
-		builder.append(", etat=");
-		builder.append(etat);
+		builder.append(", _basicEtat=");
+		builder.append(_basicEtat);
+		builder.append(", etatTache=");
+		builder.append(etatTache);
 		builder.append("]");
 		return builder.toString();
 	}
+	
+	
 	
     
 

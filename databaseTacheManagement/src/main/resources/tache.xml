@@ -8,7 +8,7 @@
     <resultMap id="result" type="Tache">
         <result property="idTache" column="idtache"/>
         <result property="label" column="label"/>   
-        <result property="etat" column="etat"/>
+        <result property="_basicEtat" column="etat"/>
          
         
         
