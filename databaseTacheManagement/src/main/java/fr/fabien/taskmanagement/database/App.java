@@ -2,6 +2,7 @@ package fr.fabien.taskmanagement.database;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -49,6 +50,23 @@ public class App
 			for (Tache tache : listTache) {
 				System.out.println(tache);
 			}
+			
+			Tache nouvelle = new Tache();
+			nouvelle.setLabel("nouvelle tache");
+			nouvelle.setDateCreation(new Date());
+			nouvelle.set_BasicEtat("A");
+			
+			session.insert("Tache.insert",nouvelle);
+			
+			try{
+				// do something with the session
+				 
+				session.commit();
+				}catch(Exception e){
+				session.rollback();
+				}finally{
+				session.close();
+				}
 			
 			
 		} catch (IOException ex) {

@@ -1,5 +1,7 @@
 package fr.fabien.taskmanagement.database.business;
 
+import java.util.Date;
+
 /**
  * TODO ajouter un commentaire
  * 
@@ -14,6 +16,8 @@ public class Tache {
 	String label;
 	String _basicEtat;
 	EtatTache etatTache;
+	Date dateEtat;
+	Date dateCreation;
 	
 	
 	public String getIdTache() {
@@ -40,6 +44,19 @@ public class Tache {
 	public void setEtatTache(EtatTache etatTache) {
 		this.etatTache = etatTache;
 	}
+	
+	public Date getDateEtat() {
+		return dateEtat;
+	}
+	public void setDateEtat(Date dateEtat) {
+		this.dateEtat = dateEtat;
+	}
+	public Date getDateCreation() {
+		return dateCreation;
+	}
+	public void setDateCreation(Date dateCreation) {
+		this.dateCreation = dateCreation;
+	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -51,6 +68,10 @@ public class Tache {
 		builder.append(_basicEtat);
 		builder.append(", etatTache=");
 		builder.append(etatTache);
+		builder.append(", dateEtat=");
+		builder.append(dateEtat);
+		builder.append(", dateCreation=");
+		builder.append(dateCreation);
 		builder.append("]");
 		return builder.toString();
 	}

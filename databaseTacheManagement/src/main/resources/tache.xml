@@ -9,6 +9,8 @@
         <result property="idTache" column="idtache"/>
         <result property="label" column="label"/>   
         <result property="_basicEtat" column="etat"/>
+        <result property="dateCreation" column="date_creation"/>
+        <result property="dateEtat" column="date_traitement"/>
          
         
         
@@ -20,13 +22,13 @@
  
    <!--  <select id="selectById" parameterType="int" resultMap="result">
         SELECT * FROM persons WHERE id = #{id}
-    </select>
+    </select>-->
  
-    <insert id="insert" parameterType="Person" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO persons (name) VALUES (#{name});
+    <insert id="insert" parameterType="Tache" useGeneratedKeys="true" keyProperty="idTache">
+        INSERT INTO tache (label,etat,date_creation,date_traitement) VALUES (#{label},#{_basicEtat},#{dateCreation},#{dateEtat})
     </insert>
  
-    <update id="update" parameterType="Person">
+   <!-- <update id="update" parameterType="Person">
         UPDATE persons
         SET name = #{name}
         WHERE id = #{id} 
