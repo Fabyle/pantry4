@@ -8,6 +8,9 @@ name = ""
 version = ""
 h = Hash.new();
 
+
+
+
 Dir.foreach(path) do |item|
   next if item == '.' or item == '..' or !item.include? "systalians"
   Zip::File.open(path+'\\'+item) do |zip_file|
@@ -29,4 +32,7 @@ Dir.foreach(path) do |item|
     end #do
   end #do
 end #do
+
+
+
 puts h
