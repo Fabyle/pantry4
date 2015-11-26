@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-Name: org.eclipse.e4.ui.workbench.renderers.swt French NLS Support
+Bundle-SymbolicName: org.eclipse.e4.ui.workbench.renderers.swt.nl_fr;singleton=true
+Bundle-Version: 4.2.0.v20120423043401
+Bundle-ClassPath: org.eclipse.e4.ui.workbench.renderers.swt.nl_fr_4.2.0.v20120423043401.jar
+Bundle-Vendor: Eclipse.org
+Fragment-Host: org.eclipse.e4.ui.workbench.renderers.swt

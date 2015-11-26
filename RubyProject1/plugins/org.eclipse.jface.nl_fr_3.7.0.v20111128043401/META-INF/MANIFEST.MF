@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-Name: org.eclipse.jface French NLS Support
+Bundle-SymbolicName: org.eclipse.jface.nl_fr;singleton=true
+Bundle-Version: 3.7.0.v20111128043401
+Bundle-ClassPath: org.eclipse.jface.nl_fr_3.7.0.v20111128043401.jar
+Bundle-Vendor: Eclipse.org
+Fragment-Host: org.eclipse.jface
