@@ -35,4 +35,4 @@ end #do
 
 
 
-puts h
+puts h.sort.to_h
