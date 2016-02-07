@@ -1,0 +1,10 @@
+{
+    "name": "travel",
+    "version": "0.1.0",
+    "dependencies": {
+      "body-parser": "^1.8.1",
+      "express": "^4.9.0"       
+          },
+    "author": "Fabien>",
+    "description": "Un outil de voyage"
+}
