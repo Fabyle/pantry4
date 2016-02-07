@@ -24,4 +24,4 @@ app.post('/login',function(req,res){
 
 app.listen(3000,function(){
   console.log("Started on PORT 3000");
-})
+});
