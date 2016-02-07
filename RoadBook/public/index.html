@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Analyse d'un trajet</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+    <script>
+      $(document).ready(function(){
+        var origine,destination;
+        $("#submit").click(function(){
+          origine=$("#origine").val();
+          destination=$("#destination").val();
+          $.post("http://localhost:3000/login",{origine: origine,destination: destination}, function(data){
+
+              $("#retour").text(data);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>analyse d'un trajet</h1>
+    <div>
+      <br>
+
+      Origine : <input type="TEXT" id="origine" size="40">
+      Destination : <input type="TEXT" id="destination" size="40">
+      <input type="button" id="submit" value="Rechercher">
+    <br>
+    </div>
+
+      <h2 id=retour> ...</h2>
+    <div>
+
+
+
+
+  </body>
+</html>
