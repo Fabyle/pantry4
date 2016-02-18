@@ -1,7 +1,7 @@
 var express        =         require("express");
 var bodyParser     =         require("body-parser");
 var app            =         express();
-var googlemap      =         require('./googlemap');
+var googlemap      =         require('../google/googlemap');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

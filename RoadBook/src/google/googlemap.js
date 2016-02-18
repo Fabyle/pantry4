@@ -47,6 +47,8 @@ var distanceEntreDeuxPoints = function(origine, destination, callbalck) {
         //console.log("Time: " + route.legs[0].duration.text);
 
         var retour = new Resultat;
+        retour.origine = origine;
+        retour.destination = destination;
         retour.distance = route.legs[0].distance.text;
         retour.temps = route.legs[0].duration.text;
         callbalck(retour);
