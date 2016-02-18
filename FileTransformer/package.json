@@ -1,0 +1,15 @@
+{
+  "name": "FileTransformer",
+  "version": "0.0.0",
+  "description": "An example Node.js streaming data file parser",
+  "private": true,
+  
+  "dependencies": {
+    "csv-parse":"1.0.1",
+    "csv-streamify":"3.0.3",
+    "JSONStream":"1.0.7",
+    "node-json2html":"1.0.0"
+    
+  }
+  
+}
