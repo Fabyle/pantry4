@@ -2,6 +2,7 @@ var express        =         require("express");
 var bodyParser     =         require("body-parser");
 var app            =         express();
 var googlemap      =         require('../google/googlemap');
+var path		=			require('path');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -9,7 +10,9 @@ app.use(express.static('public'));
 
 
 app.get('/',function(req,res){
-  res.sendFile("index.html");
+//   res.sendFile(path.join(__dirname +"/toto.html"));
+	 res.sendFile(path.join(__dirname +"/public/index2.html"));
+	//res.sendFile("public/index2.html");
 });
 app.post('/login',function(req,res){
   var origine=req.body.origine;
@@ -22,6 +25,6 @@ app.post('/login',function(req,res){
 
 
 
-app.listen(3000,function(){
-  console.log("Started on PORT 3000");
+app.listen(3001,function(){
+  console.log("Started on PORT 3001");
 });
