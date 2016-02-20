@@ -19,7 +19,7 @@ app.post('/login',function(req,res){
   var destination=req.body.destination;
   googlemap.distanceEntreDeuxPoints(origine,destination,
     function(retour){
-      res.end("Julie, ton trajet est calculé :"+retour.temps+" - "+retour.distance);
+      res.end(retour.temps+" - "+retour.distance);
       });
   });
 

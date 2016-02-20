@@ -433,6 +433,43 @@
 	 * Le main lorsque le document est pret
 	 */
 	$(document).ready(function() {
+		
+		/*-----------------------------------------------------*/
+
+		var origine, destination;
+		$("#submit").click(function() {
+			origine = $("#origine").val().toUpperCase();
+			destination = $("#destination").val().toUpperCase();
+			$.post("http://localhost:3001/login", {
+				origine : origine,
+				destination : destination
+			}, function(data) {
+				sys.addNode(origine, {
+					color : "blue",
+					shape : "dot"
+					
+				});
+				sys.addNode(destination, {
+					color : "blue",
+					shape : "dot"
+					
+				});
+				sys.addNode(data, {
+					color : "black"
+					
+				});
+				sys.addEdge(origine,data);
+				sys.addEdge(data,destination);
+				$("#retour").text(data);
+			});
+		});
+	
+		
+		/*--------------------------------------*/
+		
+		
+		
+		
 		var CLR = {
 			branch : "#b2b19d",
 			code : "orange",
@@ -440,96 +477,96 @@
 			demo : "#a7af00"
 		}
 
-		var theUI = {
-			nodes : {
-				"organisation" : {
-					color : "blue",
-					shape : "dot",
-					alpha : 1
-				},
-
-				"Relation client" : {
-					color : CLR.branch,
-					shape : "dot",
-					alpha : 1
-				},
-				halfviz : {
-					color : CLR.demo,
-					alpha : 0,
-					link : '/halfviz'
-				},
-				atlas : {
-					color : CLR.demo,
-					alpha : 0,
-					link : '/atlas'
-				},
-				echolalia : {
-					color : CLR.demo,
-					alpha : 0,
-					link : '/echolalia'
-				},
-
-				docs : {
-					color : CLR.branch,
-					shape : "dot",
-					alpha : 1
-				},
-				reference : {
-					color : CLR.doc,
-					alpha : 0,
-					link : '#reference'
-				},
-				introduction : {
-					color : CLR.doc,
-					alpha : 0,
-					link : '#introduction'
-				},
-
-				code : {
-					color : CLR.branch,
-					shape : "dot",
-					alpha : 1
-				},
-				github : {
-					color : CLR.code,
-					alpha : 0,
-					link : 'https://github.com/samizdatco/arbor'
-				},
-				".zip" : {
-					color : CLR.code,
-					alpha : 0,
-					link : '/js/dist/arbor-v0.92.zip'
-				},
-				".tar.gz" : {
-					color : CLR.code,
-					alpha : 0,
-					link : '/js/dist/arbor-v0.92.tar.gz'
-				}
-			},
-			edges : {
-				"organisation" : {
-					"Relation client" : {
-						length : .8
-					},
-				// docs:{length:.8},
-				// code:{length:.8}
-				},
-				"Relation client" : {
-					halfviz : {},
-					atlas : {},
-					echolalia : {}
-				},
-				docs : {
-					reference : {},
-					introduction : {}
-				},
-				code : {
-					".zip" : {},
-					".tar.gz" : {},
-					"github" : {}
-				}
-			}
-		}
+//		var theUI = {
+//			nodes : {
+//				"organisation" : {
+//					color : "blue",
+//					shape : "dot",
+//					alpha : 1
+//				},
+//
+//				"Relation client" : {
+//					color : CLR.branch,
+//					shape : "dot",
+//					alpha : 1
+//				},
+//				halfviz : {
+//					color : CLR.demo,
+//					alpha : 0,
+//					link : '/halfviz'
+//				},
+//				atlas : {
+//					color : CLR.demo,
+//					alpha : 0,
+//					link : '/atlas'
+//				},
+//				echolalia : {
+//					color : CLR.demo,
+//					alpha : 0,
+//					link : '/echolalia'
+//				},
+//
+//				docs : {
+//					color : CLR.branch,
+//					shape : "dot",
+//					alpha : 1
+//				},
+//				reference : {
+//					color : CLR.doc,
+//					alpha : 0,
+//					link : '#reference'
+//				},
+//				introduction : {
+//					color : CLR.doc,
+//					alpha : 0,
+//					link : '#introduction'
+//				},
+//
+//				code : {
+//					color : CLR.branch,
+//					shape : "dot",
+//					alpha : 1
+//				},
+//				github : {
+//					color : CLR.code,
+//					alpha : 0,
+//					link : 'https://github.com/samizdatco/arbor'
+//				},
+//				".zip" : {
+//					color : CLR.code,
+//					alpha : 0,
+//					link : '/js/dist/arbor-v0.92.zip'
+//				},
+//				".tar.gz" : {
+//					color : CLR.code,
+//					alpha : 0,
+//					link : '/js/dist/arbor-v0.92.tar.gz'
+//				}
+//			},
+//			edges : {
+//				"organisation" : {
+//					"Relation client" : {
+//						length : .8
+//					},
+//				// docs:{length:.8},
+//				// code:{length:.8}
+//				},
+//				"Relation client" : {
+//					halfviz : {},
+//					atlas : {},
+//					echolalia : {}
+//				},
+//				docs : {
+//					reference : {},
+//					introduction : {}
+//				},
+//				code : {
+//					".zip" : {},
+//					".tar.gz" : {},
+//					"github" : {}
+//				}
+//			}
+//		}
 
 		// Le systeme
 		var sys = arbor.ParticleSystem()
@@ -552,17 +589,17 @@
 		sys.graft(theUI)
 		
 		// j'ajoute un noeud rose
-		sys.addNode("monNoeud", {
-			color : "red",
-			shape : "dot"
-			
-		});
-		sys.addNode("monNoeud2", {
-			color : "blue",
-			shape : "dot",
-			alpha : 1
-		});
-		sys.addEdge("monNoeud","monNoeud2");
+//		sys.addNode("monNoeud", {
+//			color : "red",
+//			shape : "dot"
+//			
+//		});
+//		sys.addNode("monNoeud2", {
+//			color : "blue",
+//			shape : "dot",
+//			alpha : 1
+//		});
+//		sys.addEdge("monNoeud","monNoeud2");
 		
 		// var nav = Nav("#nav")
 		// $(sys.renderer).bind('navigate', nav.navigate)
