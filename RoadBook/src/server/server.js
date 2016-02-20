@@ -11,7 +11,7 @@ app.use(express.static('public'));
 
 app.get('/',function(req,res){
 //   res.sendFile(path.join(__dirname +"/toto.html"));
-	 res.sendFile(path.join(__dirname +"/public/index2.html"));
+	 res.sendFile(path.join(__dirname +"/public/index.html"));
 	//res.sendFile("public/index2.html");
 });
 app.post('/login',function(req,res){

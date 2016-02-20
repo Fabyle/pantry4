@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Analyse d'un trajet</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="style.css" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+	
+</script>
+<script>
+	$(document).ready(function() {
+		var origine, destination;
+		$("#submit").click(function() {
+			origine = $("#origine").val();
+			destination = $("#destination").val();
+			$.post("http://localhost:3000/login", {
+				origine : origine,
+				destination : destination
+			}, function(data) {
+
+				$("#retour").text(data);
+			});
+		});
+	});
+</script>
+</head>
+<body>
+	<canvas id="sitemap" width="500" height="300"></canvas>
+	<table class="invisibleTable">
+		<tr>
+			<td>
+				<h2>In my car</h2>
+			</td>
+			<td></td>
+		<tr>
+			<td><img alt="" src="car.png"></td>
+			<td>
+				<div>
+					<table>
+						<tr>
+							<td class="mytableau">Origine :</td>
+							<td class="mytableau"><input type="TEXT"
+								class="myInputField" id="origine" size="40"></td>
+						</tr>
+						<tr>
+							<td class="mytableau">Destination :</td>
+							<td class="mytableau"><input type="TEXT"
+								class="myInputField" id="destination" size="40"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="mytableau" align="right"><input type="button"
+								class="myButton" id="submit" value="Rechercher"></td>
+						</tr>
+					</table>
+
+				</div>
+			</td>
+		</tr>
+		<div>
+			<h2 id=retour>...</h2>
+		</div>
+		<script src="./js/jquery-1.6.1.min.js"></script>
+		<script src="./js/jquery.address-1.4.min.js"></script>
+
+		<script src="./js/lib/arbor.js"></script>
+		<script src="./js/lib/arbor-tween.js"></script>
+		<script src="./js/lib/arbor-graphics.js"></script>
+
+		<script src="site.js"></script>
+</body>
+</html>
