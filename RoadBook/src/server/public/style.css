@@ -3,8 +3,18 @@ font-family:Arial;
 font-size:17px;
 padding:7px 17px;
 color : #696969;
-margin : 20px;
+margin : 5px;
 background-color: #d3d3d3
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
 }
 
 *:focus {
@@ -79,10 +89,12 @@ table {
 
 td {
 	width : 25;
-	padding: 10px;
+	padding: 2px;
 }
 
 .invisibleTable {
+	padding: 0px;
+	margin-top: 0px;
 	border-style: none;
 	box-shadow : none;
 	background-color: #d3d3d3

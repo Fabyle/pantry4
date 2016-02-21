@@ -40,8 +40,8 @@
 			},
 			/*--- resize de that -------------------------------*/
 			resize : function() {
-				canvas.width = $(window).width()
-				canvas.height = .75 * $(window).height()
+				canvas.width = 0.5 * $(window).width()
+				canvas.height = 0.5 * $(window).height()
 				sys.screen({
 					size : {
 						width : canvas.width,
